@@ -1,0 +1,43 @@
+#wtf? No sale (object)
+class Solution(object): 	# Este siempre se llama asi en leetcode
+	
+	def funcionAuxiliar(self, parametro):	# el self siempre va. Hace que la funcion pertenezca a la calse
+		statement1
+		statement2
+		statement3
+		statement4
+
+		return result
+
+	def funcionSinParametros(self): # incluso si la funcion no tiene parametros, le tienes que escribir self
+		return 'hola'	
+
+	def funcionVergas(self, parametro1, parametro2):	# el self siempre va. Hace que la funcion pertenezca a la calse
+		statement1
+		statement2
+		statement3
+
+		# uso self.nombreFuncion para llamar a una funcion dentro de la clase
+		# si no le pones self. no encuentra el nombre de la clase
+		result = self.funcionAuxiliar('caca') 
+		resulr += nestedFunction()
+
+		return result
+
+	# Esto esta bien raro pero bien cool. Puedes escribir funciones dentro de funciones
+	def nestedFunction(self):
+
+		def funcionDentroDeFuncion(n, i):
+			return n+i
+
+		res = 0	
+		for i in range(4):
+			res = funcionDentroDeFuncion(res, i)	
+		
+		def otraFuncionDentro(n, i):
+			
+
+		return res
+
+problemaLeetcode = Solution() # Asi declaras el objeto dentro de una variable
+problemaLeetcode.funcionVergas('parametro1', 'parametro2') # Si lo llamas desde un objeto creado, ya no lleva el self.
