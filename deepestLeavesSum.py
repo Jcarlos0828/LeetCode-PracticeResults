@@ -6,7 +6,7 @@ Given a binary tree, return the sum of values of its deepest leaves.
 
 #Function made to copy and paste to run in the leetcode console
 class Solution:
-    def deepestLeavesSum(self, root: TreeNode) -> int:
+    def deepestLeavesSum(self, root) -> int:
         level = 0
         #This will keep track of the levels, key = level, value = sum 
         dictionary = dict()
