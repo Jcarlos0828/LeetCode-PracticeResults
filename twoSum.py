@@ -16,7 +16,7 @@ return [0, 1].
 class Solution:
     def twoSum(self, nums: '''List[int]''', target: int) -> '''List[int]''':
         addUp = {}
-        for index, val in range(nums):
+        for index, val in enumerate(nums):
             if val in addUp:
                 return [addUp[val], index]
             addUp[target-val] = addUp.get(val,0) + index
