@@ -14,8 +14,34 @@ Level 3 sum = 7 + -8 = -1.
 So we return the level with the maximum sum which is level 2.
 """
 import collections
+
+#Using BFS
 class Solution:
+    
     def maxLevelSum(self, root: '''TreeNode''') -> int:
+
+        queue = collections.deque()
+        queue.append(root)
+        level = 0
+        outputLevel = 0
+        maxSum = float('-inf')
+        while queue:
+            level += 1
+            currSum = 0
+            for _ in range(len(queue)):
+                currNode = queue.popleft()
+                if currNode.left:
+                    queue.append(currNode.left)
+                if currNode.right:
+                    queue.append(currNode.right)
+                currSum += currNode.val
+            if currSum > maxSum:
+                maxSum = currSum
+                outputLevel = level
+        return outputLevel
+
+#Using level by level
+"""
         if not root:
             return 0
         queue = collections.deque()
@@ -46,3 +72,4 @@ class Solution:
                 childsProcessed = childs
                 childs = 0
         return levelMaxVal
+"""
