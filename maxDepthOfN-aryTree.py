@@ -22,3 +22,18 @@ class Solution:
         
         dfs(root, 1)
         return answer[0]
+
+#NOT MY SOLUTION
+#This one 'modifies' the value in a tuple, and I find it valuable
+"""
+def maxDepth(self, root):
+        stack = []
+        if root: stack.append((root, 1))
+        depth = 0
+        while stack:
+            (node, d) = stack.pop()
+            depth = max(depth, d)
+            for child in node.children:
+                stack.append((child, d+1))
+        return depth
+"""
