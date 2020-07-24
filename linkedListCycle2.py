@@ -22,16 +22,20 @@ Explanation: There is a cycle in the linked list, where tail connects to the sec
 #         self.next = None
 
 class Solution:
+    #Explanation:
+    #Fast travels twice of distance, we call x to the distance from head to where list cycles
+    #We call y from the end of x to where fast and slow met, and Z from Y ends to Y starts
     def detectCycle(self, head: """ListNode""") -> """ListNode""":
-        turtle = head
-        index = 0
-        dix = {}
-        if not turtle: return
-        while turtle:
-            if turtle not in dix:
-                dix[turtle] = index
-            else:
-                return turtle
-            turtle = turtle.next
-            index += 1
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow is fast:
+                print("El nodo donde se encontraron fue", slow.val)
+                while head:
+                    print("Actualmente el head vale", head.val, "y el slow vale", slow.val)
+                    if head == slow:
+                        return head
+                    head = head.next
+                    slow = slow.next
         return
